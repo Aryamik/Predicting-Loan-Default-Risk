@@ -16,7 +16,7 @@ Finally, ‘Telephone’ should also be removed as it is irrelevant in predictin
 
 Next we will perform an association analysis on the numerical variables and ensure that there are no variables which are highly correlated with each other ( a correlation of higher than 0.7).
 
-![Correlation Matrix](https://raw.githubusercontent.com/Aryamik/Predicting-Loan-Default-Risk/master/Images/Confusion%20Matrix.PNG)
+![Correlation Matrix](https://raw.githubusercontent.com/Aryamik/Predicting-Loan-Default-Risk/master/Images/Correlation%20Matrix.PNG)
 
 *Figure 1: Correlation Matrix of all Numerical Variables*
 
@@ -25,34 +25,80 @@ Based on the correlation matrix generated above, none of the numerical variables
 ## Training the Classification Models
 ### Logistic Regression (Stepwise)
 
+![Logistic Regression](https://raw.githubusercontent.com/Aryamik/Predicting-Loan-Default-Risk/master/Images/Logistic%20Regression.PNG)
 
+*Figure 2: Logistic Regression Model*
 
 Using 'Credit Application Result' as the target variable, 'Account Balance', 'Purpose', 'Payment Status of Previous Credit', 'Length of Current Employment', 'Installment per Cent' and 'Credit Amount' are the most significant predictive variables.
 
 ### Decision Tree
 
+![Decision Tree](https://raw.githubusercontent.com/Aryamik/Predicting-Loan-Default-Risk/master/Images/Decision%20Tree.PNG)
 
+*Figure 3: Decision Tree*
+
+![Summary of Decision Tree](https://raw.githubusercontent.com/Aryamik/Predicting-Loan-Default-Risk/master/Images/Decision%20Tree%20Summary.PNG)
+
+*Figure 4: Summary of Decision Tree*
 
 Using 'Credit Application Result' as the target variable, 'Account Balance', 'Value Savings Stocks' and 'Duration of Credit Month' are the top 3 most important variables.
 
 ### Forest Model
 
+![Forest Model](https://raw.githubusercontent.com/Aryamik/Predicting-Loan-Default-Risk/master/Images/Forest%20Model.PNG)
+
+*Figure 5: Forest Model*
+
+![Forest Model](https://raw.githubusercontent.com/Aryamik/Predicting-Loan-Default-Risk/master/Images/Variable%20Importance%20Plot.PNG)
+
+*Figure 6: Variable Importance Plot*
 
 Using 'Credit Application Result' as the target variable, 'Credit Amount', 'Age Years' and 'Duration of Credit Month' are the 3 most important variables
 
 ### Boosted Model
 
+![Forest Model](https://raw.githubusercontent.com/Aryamik/Predicting-Loan-Default-Risk/master/Images/Boosted%20Model.PNG)
+
+*Figure 7: Boosted Model*
+
+![](https://raw.githubusercontent.com/Aryamik/Predicting-Loan-Default-Risk/master/Images/Variable%20Importance%20Plot%20for%20Forest%20Model.PNG)  ![](https://raw.githubusercontent.com/Aryamik/Predicting-Loan-Default-Risk/master/Images/Variable%20Importance%20Plot.PNG)
+
+*Figure 8: Boosted Model Summary*
 
 Using Credit Application Result as the target variable, Credit Amount, Account Balance and Duration of Credit Month are the 3 most important variables.
 
 ## Model Comparison
 
+![Model Comparison](https://raw.githubusercontent.com/Aryamik/Predicting-Loan-Default-Risk/master/Images/Model%20Comparison%20Report.PNG)
+
+*Figure 9: Model Comparison*
+
+![](https://raw.githubusercontent.com/Aryamik/Predicting-Loan-Default-Risk/master/Images/Confusion%20Matrices.PNG)
+
+*Figure 10: Confusion Matrices*
 
 Based on the model comparison report above, the overall accuracy for
 * Logistic Stepwise model is 76%
 * Decision Tree is 74.67%
 * Forest Model is 80%
 * Boosted Model is 78.67% 
+
+![](https://raw.githubusercontent.com/Aryamik/Predicting-Loan-Default-Risk/master/Images/Gain%20Chart.PNG)
+
+*Figure 11: Gain Chart*
+
+![](https://raw.githubusercontent.com/Aryamik/Predicting-Loan-Default-Risk/master/Images/Lift%20Curve.PNG)
+
+*Figure 12: Lift Curve*
+
+![](https://raw.githubusercontent.com/Aryamik/Predicting-Loan-Default-Risk/master/Images/Precision%20and%20Recall%20Curve.PNG)
+
+*Figure 13: Precision and Recall Curve*
+
+![](https://raw.githubusercontent.com/Aryamik/Predicting-Loan-Default-Risk/master/Images/ROC%20Curve.PNG)
+
+*Figure 14: ROC Curve*
+
 
 Forest model should be chosen as it offers the highest accuracy of 80% against validation set.
 The Forest model reaches the positive prediction value at the fastest rate. This is crucial in avoiding lending money to customers with high probability of defaulting while ensuring opportunities are not overlooked by not loaning to creditworthy customers.
@@ -62,4 +108,15 @@ We will then use this Forest Model to identify the number of creditworthy custom
 
 ## Results
 Ultimately we get a total of 405 customers out of 500 who are creditworthy after accounting for other variables. 
+
+## Alteryx Workflows
+
+![](https://raw.githubusercontent.com/Aryamik/Predicting-Loan-Default-Risk/master/Images/Prediciting%20Default%20Risk%20Alteryx%20Workflow.PNG)
+
+*Figure 15: Predicting Default Risk Workflow*
+
+
+![](https://raw.githubusercontent.com/Aryamik/Predicting-Loan-Default-Risk/master/Images/Scoring%20Customers%20Alteryx%20Workflow.PNG)
+
+*Figure 16: Scoring Customers Workflow*
 
