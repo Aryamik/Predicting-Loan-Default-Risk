@@ -16,7 +16,9 @@ Finally, ‘Telephone’ should also be removed as it is irrelevant in predictin
 
 Next we will perform an association analysis on the numerical variables and ensure that there are no variables which are highly correlated with each other ( a correlation of higher than 0.7).
 
-Based on the confusion matrix generate above, none of the numerical variables are highly correlated to each other. 
+![Correlation Matrix](Images/Confusion%20Matrix.png)
+
+Based on the correlation matrix generated above, none of the numerical variables are highly correlated to each other. 
 
 ## Training the Classification Models
 ### Logistic Regression (Stepwise)
